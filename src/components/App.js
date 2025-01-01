@@ -1,6 +1,5 @@
-// App.js
 import React, { useState } from "react";
-import "./mystyle.css";
+import "./App.css";
 import items from "./data";
 
 function App() {
@@ -29,6 +28,7 @@ function App() {
         {categories.map((category, index) => (
           <button
             key={index}
+            id={`filter-btn-${index}`}
             className="category-btn"
             onClick={() => filterItems(category)}
           >
@@ -36,7 +36,7 @@ function App() {
           </button>
         ))}
       </div>
-      <div className="menu">
+      <div id="main" className="menu">
         {menuItems.map((item) => (
           <article key={item.id} className="menu-item">
             <img src={item.img} alt={item.title} className="photo" />
